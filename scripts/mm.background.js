@@ -5,8 +5,8 @@
  */
 var STATE = false,
     STATE_ICON = {
-      false: 'mmft-16.png',
-      true: 'mmft-off.png'
+      false: 'mmft-128.png',
+      true: 'mmft-128-on.png'
     },
     STATE_DISPATCH = {
       false: '$("textarea, input:text, search").mmkb().addClass("__mm");',
