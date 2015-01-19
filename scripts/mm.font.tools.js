@@ -6,7 +6,7 @@ MM Font Tagger : http://userscripts.org/scripts/review/103745 (modified code par
 
 function loadJquery(){
     if(jQuery == 'undefined') {
-        chrome.tabs.executeScript(null, {file: 'jquery.min.js'})
+        chrome.tabs.executeScript(null, {file: 'libs/jquery.min.js'})
     }
 }
 
@@ -19,7 +19,7 @@ function addHandles() {
 }
 
 function injectCss(){
-    var path = chrome.extension.getURL('mm.css');
+    var path = chrome.extension.getURL('css/mm.css');
     var link = document.createElement('link');
     link.type = 'text/css';
     link.rel = 'stylesheet';

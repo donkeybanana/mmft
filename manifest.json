@@ -4,7 +4,6 @@
   "version": "0.1",
   "permissions": [
     "tabs",
-    "activeTab",
     "http://*/*",
     "https://*/*"
   ],
@@ -23,9 +22,8 @@
     "persistent": false
   },
   "web_accessible_resources": [
-    "icons/*",
-    "scripts/*",
-    "css/*",
+    "scripts/mm.kb.0.0.2.js",
+    "css/mm.css",
     "fonts/*",
     "libs/*"
   ],

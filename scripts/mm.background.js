@@ -16,15 +16,14 @@ var STATE = false,
 /**
  * Toggle keyboard on click
  */
-chrome.browserAction.onClicked.addListener(function() {
+chrome.browserAction.onClicked.addListener(function(tab) {
   STATE = !STATE;
 
-  console.log(STATE, STATE_DISPATCH[STATE]);
-
+  // Change state
   chrome.tabs.executeScript(null, {
     file: 'scripts/state/' + STATE_DISPATCH[STATE]
   }, function(){
-    console.log(arguments);
+    // console.log(arguments);
   });
 });
 
