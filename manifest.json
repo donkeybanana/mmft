@@ -4,6 +4,7 @@
   "version": "0.1",
   "permissions": [
     "tabs",
+    "activeTab",
     "http://*/*",
     "https://*/*"
   ],
@@ -22,10 +23,11 @@
     "persistent": false
   },
   "web_accessible_resources": [
-    "css/mm.css",
-    "fonts/mm3.ttf",
-    "libs/Padauk.ttf",
-    "libs/ZawgyiOne.ttf"
+    "icons/*",
+    "scripts/*",
+    "css/*",
+    "fonts/*",
+    "libs/*"
   ],
   "browser_action": {
     "default_icon": {

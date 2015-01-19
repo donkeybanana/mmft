@@ -9,8 +9,8 @@ var STATE = false,
       true: 'mmft-128-on.png'
     },
     STATE_DISPATCH = {
-      false: '$("textarea, input:text, search").mmkb().addClass("__mm");',
-      true: '$("textarea, input:text, search").unbindMmkb().removeClass("__mm");'
+      false: 'keyboard_disable.js',
+      true: 'keyboard_enable.js'
     };
 
 /**
@@ -19,8 +19,12 @@ var STATE = false,
 chrome.browserAction.onClicked.addListener(function() {
   STATE = !STATE;
 
-  chrome.tabs.executeScript({
-    code: STATE_DISPATCH[STATE]
+  console.log(STATE, STATE_DISPATCH[STATE]);
+
+  chrome.tabs.executeScript(null, {
+    file: 'scripts/state/' + STATE_DISPATCH[STATE]
+  }, function(){
+    console.log(arguments);
   });
 });
 
