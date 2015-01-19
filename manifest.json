@@ -2,26 +2,37 @@
   "name": "Myanmar Font Tools",
   "description": "Tools for writing and reading in Myanmar language",
   "version": "0.1",
-  "permissions": ["contextMenus", "tabs", "http://*/*", "https://*/*"],
-  "content_scripts": [
-    {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["jquery.min.js", "mm.font.tools.js", "mm.kb.0.0.2.js"]
-    }
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
   ],
-  "icons": { 
-    "16": "mmft-16.png",
-    "48": "mmft-48.png",
-    "128": "mmft-128.png" 
-  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": [
+      "libs/jquery.min.js",
+      "scripts/mm.font.tools.js",
+      "scripts/mm.kb.0.0.2.js"
+    ]
+  }],
   "background": {
-    "scripts": ["mm.context.menu.js"]
+    "scripts": [
+      "scripts/mm.background.js"
+    ],
+    "persistent": false
   },
   "web_accessible_resources": [
-    "mm.css",
-    "mm3.ttf",
-    "Padauk.ttf",
-    "ZawgyiOne.ttf"
-  ],  
+    "css/mm.css",
+    "fonts/mm3.ttf",
+    "libs/Padauk.ttf",
+    "libs/ZawgyiOne.ttf"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/mmft-16.png",
+      "38": "icons/mmft-48.png"
+    },
+    "default_title": "Show Keyboard"
+  },
   "manifest_version": 2
 }
